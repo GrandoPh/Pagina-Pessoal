@@ -204,8 +204,8 @@ Uma tarefa só está pronta quando:
 
 ## 10. Estado atual
 
-- Repositório: `GrandoPh/Pagina-Pessoal` (tornar **público** — requisito do Pages no plano gratuito).
-- Publicação alvo: `https://grandoph.github.io/Pagina-Pessoal/`.
-- Fase: **planejamento concluído, implementação não iniciada.**
+- Repositório: `GrandoPh/Pagina-Pessoal` — **público** (requisito do Pages no plano gratuito).
+- Site publicado: `https://grandoph.github.io/Pagina-Pessoal/`.
+- Fase: **site publicado** (F0–F7 e F9 concluídas; F8 com automação concluída e testes manuais pendentes).
 - Documentos: `SPECS.md` (produto), `TODO.md` (execução passo a passo), este `AGENTS.md` (comportamento).
-- Próximo passo autorizado: executar `TODO.md` a partir de `F0.T1`, na ordem, com verificação por tarefa.
+- Próximo passo: preencher os `TODO` de conteúdo real (e-mail, LinkedIn, projetos, datas, hobbies) e concluir os testes manuais de teclado e mobile da F8.

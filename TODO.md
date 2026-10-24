@@ -25,16 +25,16 @@
 
 ### Progresso
 
-- [ ] F0 — Publicação base
-- [ ] F1 — Fundação visual
-- [ ] F2 — Layout e componentes
-- [ ] F3 — JavaScript
-- [ ] F4 — Home
-- [ ] F5 — Projetos
-- [ ] F6 — Sobre, Contato, 404
-- [ ] F7 — SEO, impressão, documentação
-- [ ] F8 — QA (testes T01–T43)
-- [ ] F9 — Deploy
+- [x] F0 — Publicação base
+- [x] F1 — Fundação visual
+- [x] F2 — Layout e componentes
+- [x] F3 — JavaScript
+- [x] F4 — Home
+- [x] F5 — Projetos
+- [x] F6 — Sobre, Contato, 404
+- [x] F7 — SEO, impressão, documentação
+- [ ] F8 — QA (T01–T43) — automação concluída (Lighthouse 1.0/1.0/1.0 nas 5 páginas, console limpo, 200 em todos os assets); falta o teste manual de teclado e de mobile real
+- [x] F9 — Deploy (publicado em `https://grandoph.github.io/Pagina-Pessoal/`)
 
 ---
 
