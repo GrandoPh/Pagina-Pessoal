@@ -183,15 +183,18 @@ Nenhum componente usa canto reto: controles em pílula, cards com raio grande, b
 ### 4.7 Movimento
 | Elemento | Comportamento |
 |---|---|
+| Entrada do hero | elementos em sequência: `opacity 0→1` + `translateY(18px→0)`, 500ms, 60ms entre cada |
 | Entrada de seção | `opacity 0→1` + `translateY(24px→0)`, 500ms |
-| Hover em card | deslocamento + sombra cresce |
+| Hover em card de projeto | deslocamento + sombra cresce; número gira e seta avança |
+| Hover em card de conteúdo (contato) | **nada se move** — só os botões internos reagem |
+| Hover em link/CTA | sublinhado desenhado por `transform: scaleX()` |
 | Marquee | faixa infinita, pausa no hover |
 | Selo | rotação ±2° no hover |
-| Link/CTA | sublinhado desenhado |
-| Troca de tema | transição de 200ms apenas em `background-color`/`color` |
-| Troca de idioma | crossfade 150ms |
+| Troca de tema | View Transition nativa: crossfade 320ms + pílula ativa viaja até a opção escolhida |
+| Troca de idioma | View Transition nativa: crossfade 320ms |
+| Navegação entre páginas | crossfade 220/320ms via `@view-transition { navigation: auto }`; sem suporte, navega direto |
 
-Com `prefers-reduced-motion: reduce`: **nada se move**, transições de tema viram instantâneas.
+Com `prefers-reduced-motion: reduce`: **nada se move**, transições de tema, idioma e página viram instantâneas.
 
 ### 4.8 Componentes
 
@@ -397,6 +400,7 @@ Orçamento em `AGENTS.md` §7. Decisões: 4 arquivos CSS (+print), 6 módulos JS
 │   │   ├── i18n.js          (E2)
 │   │   ├── nav.js           (menu mobile, sticky header)
 │   │   ├── motion.js        (reveal, marquee)
+│   │   ├── transition.js    (View Transitions de tema e idioma)
 │   │   ├── ui.js            (topo, progresso, copiar)
 │   │   └── projects.js      (dados + render + filtro)
 │   ├── i18n/
@@ -419,7 +423,7 @@ Orçamento em `AGENTS.md` §7. Decisões: 4 arquivos CSS (+print), 6 módulos JS
 | 0 | Repo público + Pages + `.nojekyll` | URL responde 200 |
 | 1 | `tokens.css` (2 temas) + `base.css` + favicon + boot de tema | Troca de tema sem flash |
 | 2 | `layout.css` + `components.css` | Componentes visíveis nos 2 temas |
-| 3 | `theme.js`, `i18n.js`, `nav.js`, `motion.js`, `ui.js` | Controles funcionam e persistem |
+| 3 | `theme.js`, `i18n.js`, `nav.js`, `motion.js`, `ui.js`, `transition.js` | Controles funcionam e persistem |
 | 4 | `index.html` | Lighthouse Perf ≥ 95 / A11y 100 |
 | 5 | `projetos.html` + `projetos/exemplo.html` | Estado vazio + template ok |
 | 6 | `sobre.html`, `contato.html`, `404.html` | Navegação completa |

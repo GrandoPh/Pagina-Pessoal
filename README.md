@@ -29,7 +29,7 @@ contato.html          Contato
 404.html              Página de erro (GitHub Pages usa automaticamente)
 styleguide.html       Referência visual interna (noindex)
 assets/css/           tokens (tema claro/escuro), base, layout, componentes, impressão
-assets/js/            theme, i18n, nav, motion, ui, projects
+assets/js/            theme, i18n, nav, motion, ui, projects, transition
 assets/i18n/          pt.json e en.json (objetos planos, chaves pontuadas)
 assets/img/           og.png (1200×630)
 ```

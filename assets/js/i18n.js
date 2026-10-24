@@ -1,4 +1,6 @@
 /* ---------- Internacionalização PT/EN ---------- */
+import { comTransicao } from './transition.js';
+
 const CHAVE = 'idioma';
 const SUPORTADOS = ['pt', 'en'];
 const url = (idioma) => new URL(`../i18n/${idioma}.json`, import.meta.url);
@@ -51,7 +53,7 @@ function traduzirPagina(dic) {
   document.documentElement.lang = atual === 'en' ? 'en' : 'pt-BR';
 }
 
-async function definir(idioma, { atualizarUrl = true } = {}) {
+async function definir(idioma, { atualizarUrl = true, animar = true } = {}) {
   if (!SUPORTADOS.includes(idioma)) idioma = 'pt';
   atual = idioma;
 
@@ -69,10 +71,16 @@ async function definir(idioma, { atualizarUrl = true } = {}) {
   }
 
   dicionario = await carregar(idioma);
-  traduzirPagina(dicionario);
-  document.dispatchEvent(
-    new CustomEvent('idioma:mudou', { detail: { idioma, dic: dicionario } })
-  );
+
+  const aplicarIdioma = () => {
+    traduzirPagina(dicionario);
+    document.dispatchEvent(
+      new CustomEvent('idioma:mudou', { detail: { idioma, dic: dicionario } })
+    );
+  };
+
+  if (animar) comTransicao(aplicarIdioma);
+  else aplicarIdioma();
 }
 
 const parametro = new URLSearchParams(window.location.search).get('lang');
@@ -83,13 +91,14 @@ try {
   salvo = null;
 }
 
-definir(parametro || salvo || 'pt', { atualizarUrl: false }).catch((erro) => {
+definir(parametro || salvo || 'pt', { atualizarUrl: false, animar: false }).catch((erro) => {
   console.warn('[i18n] falha ao carregar dicionário:', erro);
 });
 
 document.querySelectorAll('[data-idioma]').forEach((el) => {
   el.addEventListener('click', (ev) => {
     ev.preventDefault();
+    if (el.dataset.idioma === atual) return;
     definir(el.dataset.idioma).catch((erro) => {
       console.warn('[i18n] falha ao trocar idioma:', erro);
     });

@@ -48,7 +48,7 @@ function texto(valor) {
 
 function criarCard(projeto) {
   const artigo = document.createElement('article');
-  artigo.className = 'card';
+  artigo.className = 'card card--link';
   artigo.dataset.categoria = projeto.categoria || '';
   artigo.dataset.slug = projeto.slug;
 

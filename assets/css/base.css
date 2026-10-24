@@ -163,6 +163,29 @@ button {
   transform: none;
 }
 
+/* ---------- Transição entre páginas ---------- */
+/* Nativo (Chromium/Safari): crossfade curto entre documentos.
+   Navegadores sem suporte simplesmente navegam direto. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: pagina-sai 220ms var(--curva) both;
+}
+
+::view-transition-new(root) {
+  animation: pagina-entra 320ms var(--curva) both;
+}
+
+@keyframes pagina-sai {
+  to { opacity: 0; }
+}
+
+@keyframes pagina-entra {
+  from { opacity: 0; }
+}
+
 /* ---------- Movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -176,5 +199,12 @@ button {
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  @view-transition { navigation: none; }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
   }
 }

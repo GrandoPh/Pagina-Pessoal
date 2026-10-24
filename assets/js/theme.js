@@ -1,4 +1,6 @@
 /* ---------- Tema: claro, escuro e automático ---------- */
+import { comTransicao } from './transition.js';
+
 const CHAVE = 'tema';
 const raiz = document.documentElement;
 const media = window.matchMedia('(prefers-color-scheme: dark)');
@@ -9,7 +11,7 @@ function temaResolvido(estado) {
   return media.matches ? 'dark' : 'light';
 }
 
-function aplicar(estado) {
+function pintar(estado) {
   const tema = temaResolvido(estado);
   raiz.dataset.theme = tema;
   raiz.style.colorScheme = tema;
@@ -28,6 +30,11 @@ function aplicar(estado) {
   if (meta) meta.setAttribute('content', tema === 'dark' ? '#17140F' : '#F4EBD8');
 }
 
+function aplicar(estado, { animar = true } = {}) {
+  if (animar) comTransicao(() => pintar(estado));
+  else pintar(estado);
+}
+
 let estadoAtual = 'auto';
 try {
   estadoAtual = localStorage.getItem(CHAVE) || 'auto';
@@ -37,6 +44,7 @@ try {
 
 document.querySelectorAll('[data-tema]').forEach((btn) => {
   btn.addEventListener('click', () => {
+    if (btn.dataset.tema === estadoAtual) return;
     estadoAtual = btn.dataset.tema;
     aplicar(estadoAtual);
   });
@@ -46,4 +54,5 @@ media.addEventListener('change', () => {
   if (estadoAtual === 'auto') aplicar('auto');
 });
 
-aplicar(estadoAtual);
+/* Primeira pintura não anima: evita crossfade no carregamento */
+aplicar(estadoAtual, { animar: false });

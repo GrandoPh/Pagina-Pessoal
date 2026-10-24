@@ -86,7 +86,10 @@ Se a tarefa contradiz `SPECS.md`, **pare e pergunte** ou atualize o `SPECS.md` p
 
 ### 4.5 Movimento
 - Movimento **expressivo, porém com propósito**: marquee, hover com deslocamento de sombra, reveal no scroll, rotação sutil de selos.
-- Toda animação deve respeitar `@media (prefers-reduced-motion: reduce)` — nesse modo, nada se move, nada pisca.
+- **Trocas de estado viram cena:** navegação entre páginas usa `@view-transition { navigation: auto }`; tema e idioma usam `document.startViewTransition` (com fallback imediato). A pílula ativa do seletor viaja até a nova opção.
+- **Entrada do hero é escalonada** (60ms entre elementos), no máximo 500ms por elemento.
+- Card de projeto levanta no hover; card de conteúdo (contato) fica parado — só os botões internos reagem.
+- Toda animação deve respeitar `@media (prefers-reduced-motion: reduce)` — nesse modo, nada se move, nada pisca, nada faz crossfade.
 - Durações: 120–200ms (microinteração), 400–600ms (entrada). Nada acima de 800ms.
 - Anime apenas `transform` e `opacity`. Jamais `top`, `left`, `width`, `height`.
 
@@ -113,7 +116,7 @@ Se a tarefa contradiz `SPECS.md`, **pare e pergunte** ou atualize o `SPECS.md` p
 
 ### 5.3 JavaScript
 - ES Modules (`<script type="module">`), sem transpilação.
-- Um arquivo = uma responsabilidade (`theme.js`, `i18n.js`, `nav.js`, `motion.js`, `ui.js`, `projects.js`).
+- Um arquivo = uma responsabilidade (`theme.js`, `i18n.js`, `nav.js`, `motion.js`, `ui.js`, `projects.js`, `transition.js`).
 - `defer`/`type="module"` — nunca script bloqueante no `<head>`.
 - Sem `innerHTML` com dado não confiável. Para conteúdo, `textContent` ou template próprio.
 - `IntersectionObserver` para reveal; `matchMedia` para decidir se anima.

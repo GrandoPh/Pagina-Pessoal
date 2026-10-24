@@ -40,6 +40,7 @@
 
 /* ---------- Navegação ---------- */
 .nav__link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -51,12 +52,23 @@
   color: var(--cor-texto);
 }
 
-.nav__link:hover,
-.nav__link[aria-current="page"] {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
-  text-decoration-color: var(--cor-acento);
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  height: 3px;
+  background: var(--cor-acento);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--t-rapida) var(--curva);
+}
+
+.nav__link:hover::after,
+.nav__link:focus-visible::after,
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 /* ---------- Selo ---------- */
@@ -92,7 +104,9 @@
               box-shadow var(--t-rapida) var(--curva);
 }
 
-.card:hover {
+/* Só levanta o card quando ele inteiro é um link (projetos).
+   Cards de conteúdo, como o do contato, ficam parados. */
+.card--link:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--sombra-dura);
 }
@@ -130,6 +144,11 @@
   font-size: clamp(3rem, 9vw, 4.5rem);
   line-height: 1;
   color: var(--cor-destaque-texto);
+  transition: transform var(--t-media) var(--curva);
+}
+
+.card--link:hover .card__numero {
+  transform: rotate(-4deg) scale(1.06);
 }
 
 .card__corpo {
@@ -163,6 +182,11 @@
   margin-left: auto;
   font-weight: 700;
   color: var(--cor-acento);
+  transition: transform var(--t-rapida) var(--curva);
+}
+
+.card--link:hover .card__seta {
+  transform: translateX(4px);
 }
 
 /* ---------- Tag ---------- */
@@ -261,6 +285,15 @@
 .idioma__btn[aria-current="true"] {
   background: var(--cor-destaque);
   color: var(--cor-destaque-texto);
+}
+
+/* A pílula ativa viaja entre as opções na troca de tema/idioma */
+.site-header .tema__btn[aria-pressed="true"] {
+  view-transition-name: pilula-tema;
+}
+
+.site-header .idioma__btn[aria-current="true"] {
+  view-transition-name: pilula-idioma;
 }
 
 /* ---------- Filtros ---------- */
