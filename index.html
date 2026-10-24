@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  (function () {
+    try {
+      var s = localStorage.getItem('tema') || 'auto';
+      var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var t = s === 'escuro' ? 'dark' : s === 'claro' ? 'light' : (d ? 'dark' : 'light');
+      document.documentElement.dataset.theme = t;
+      document.documentElement.style.colorScheme = t;
+    } catch (e) {}
+  })();
+  </script>
+  <title>Pedro Henrique — Portfólio Full Stack</title>
+  <meta name="description" content="Estudante de Ciência da Computação construindo projetos full stack, do banco de dados à interface.">
+  <meta name="theme-color" content="#F4EBD8">
+  <link rel="canonical" href="https://grandoph.github.io/Pagina-Pessoal/">
+  <meta property="og:title" content="Pedro Henrique — Portfólio Full Stack">
+  <meta property="og:description" content="Estudante de Ciência da Computação construindo projetos full stack, do banco de dados à interface.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grandoph.github.io/Pagina-Pessoal/">
+  <meta property="og:image" content="https://grandoph.github.io/Pagina-Pessoal/assets/img/og.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bitter:wght@700;900&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body data-pagina="home">
+  <a class="skip-link" href="#conteudo" data-i18n="ui.pular">Pular para o conteúdo</a>
+  <div class="grao" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="site-header__inner u-container">
+      <a class="logo" href="index.html">Pedro <span>Henrique</span></a>
+      <nav class="nav" aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
+        <a class="nav__link" href="index.html" aria-current="page" data-i18n="nav.inicio">Início</a>
+        <a class="nav__link" href="projetos.html" data-i18n="nav.projetos">Projetos</a>
+        <a class="nav__link" href="sobre.html" data-i18n="nav.sobre">Sobre</a>
+        <a class="nav__link" href="contato.html" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="controles">
+        <div class="tema" role="group" aria-label="Tema" data-i18n-attr="aria-label:tema.rotulo">
+          <button type="button" class="tema__btn" data-tema="auto" aria-pressed="true" data-i18n="tema.auto">Auto</button>
+          <button type="button" class="tema__btn" data-tema="claro" aria-pressed="false" data-i18n="tema.claro">Claro</button>
+          <button type="button" class="tema__btn" data-tema="escuro" aria-pressed="false" data-i18n="tema.escuro">Escuro</button>
+        </div>
+        <div class="idioma" role="group" aria-label="Idioma" data-i18n-attr="aria-label:idioma.rotulo">
+          <a class="idioma__btn" href="?lang=pt" data-idioma="pt" aria-current="true">PT</a>
+          <a class="idioma__btn" href="?lang=en" data-idioma="en" aria-current="false">EN</a>
+        </div>
+        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-painel" data-i18n="ui.menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="menu-painel" id="menu-painel" hidden aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
+    <div class="menu-painel__nav">
+      <a href="index.html" aria-current="page" data-i18n="nav.inicio">Início</a>
+      <a href="projetos.html" data-i18n="nav.projetos">Projetos</a>
+      <a href="sobre.html" data-i18n="nav.sobre">Sobre</a>
+      <a href="contato.html" data-i18n="nav.contato">Contato</a>
+    </div>
+    <div class="menu-painel__controles">
+      <div class="tema" role="group" aria-label="Tema" data-i18n-attr="aria-label:tema.rotulo">
+        <button type="button" class="tema__btn" data-tema="auto" aria-pressed="true" data-i18n="tema.auto">Auto</button>
+        <button type="button" class="tema__btn" data-tema="claro" aria-pressed="false" data-i18n="tema.claro">Claro</button>
+        <button type="button" class="tema__btn" data-tema="escuro" aria-pressed="false" data-i18n="tema.escuro">Escuro</button>
+      </div>
+      <div class="idioma" role="group" aria-label="Idioma" data-i18n-attr="aria-label:idioma.rotulo">
+        <a class="idioma__btn" href="?lang=pt" data-idioma="pt" aria-current="true">PT</a>
+        <a class="idioma__btn" href="?lang=en" data-idioma="en" aria-current="false">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero__inner u-container">
+        <div class="hero__texto">
+          <span class="selo" data-i18n="hero.rotulo">Disponível para estágio</span>
+          <h1 class="u-display" data-i18n="hero.nome">Pedro Henrique</h1>
+          <p class="hero__cargo u-micro" data-i18n="hero.cargo">Ciência da Computação · Full Stack</p>
+          <p class="hero__frase" data-i18n="hero.frase">Construo interfaces e sistemas que funcionam no mundo real — do banco de dados ao último pixel.</p>
+          <div class="hero__acoes">
+            <a class="btn" href="projetos.html" data-i18n="hero.cta.projetos">Ver projetos</a>
+            <a class="btn btn--secundario" href="contato.html" data-i18n="hero.cta.contato">Falar comigo</a>
+          </div>
+        </div>
+        <div class="hero__bloco" aria-hidden="true">
+          <div class="hero__linhas"></div>
+          <span class="hero__numero">PH</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__trilha">
+        <span data-i18n="marquee.texto">FULL STACK · INTERFACES · DADOS · DESIGN ·</span>
+        <span>FULL STACK · INTERFACES · DADOS · DESIGN ·</span>
+      </div>
+    </div>
+
+    <section class="secao" data-reveal>
+      <div class="u-container">
+        <div class="secao__topo">
+          <h2 data-i18n="home.destaques.titulo">Projetos em destaque</h2>
+          <a href="projetos.html" data-i18n="home.destaques.link">Ver todos os projetos</a>
+        </div>
+        <div class="grid grid--projetos" id="lista-projetos" data-destaque="true"></div>
+        <p class="u-vazio" id="estado-construcao" data-i18n="projetos.construcao">Primeiro projeto a caminho.</p>
+      </div>
+    </section>
+
+    <section class="secao secao--painel" data-reveal>
+      <div class="u-container">
+        <p class="u-micro" data-i18n="home.manifesto.titulo">Como eu trabalho</p>
+        <ol class="manifesto">
+          <li data-i18n="home.manifesto.f1">Entendo o problema antes de escolher a tecnologia.</li>
+          <li data-i18n="home.manifesto.f2">Escrevo código que outra pessoa consegue ler depois.</li>
+          <li data-i18n="home.manifesto.f3">Trato design como parte da entrega, não como enfeite.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao" data-reveal>
+      <div class="u-container">
+        <h2 data-i18n="home.sobre.titulo">Quem está por trás</h2>
+        <div class="bloco" style="margin-top: var(--e-4)">
+          <p data-i18n="home.sobre.p1">Sou Pedro, estudante de Ciência da Computação e desenvolvedor em formação com foco em full stack. Gosto de resolver o problema inteiro: modelar os dados, montar a API e desenhar a tela.</p>
+          <p data-i18n="home.sobre.p2">Este site é meu laboratório público: cada projeto aqui é algo que eu construí, quebrei e refiz até funcionar.</p>
+          <p><a href="sobre.html" data-i18n="home.sobre.link">Mais sobre mim</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--faixa" data-reveal>
+      <div class="u-container">
+        <h2 data-i18n="cta.titulo">Vamos construir alguma coisa</h2>
+        <p style="margin-top: var(--e-3)" data-i18n="cta.texto">Aberto a estágio, freela e conversas sobre código.</p>
+        <div class="hero__acoes">
+          <!-- TODO: e-mail real -->
+          <a class="btn" href="mailto:TODO" aria-disabled="true">TODO@email</a>
+          <!-- TODO: LinkedIn real -->
+          <a class="btn btn--secundario" href="#" aria-disabled="true">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner u-container">
+      <div>
+        <p class="footer__credito" data-i18n="rodape.credito">Feito à mão com HTML, CSS e JS.</p>
+        <p class="footer__credito">© 2026 Pedro Henrique</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://github.com/GrandoPh" target="_blank" rel="noopener noreferrer">GitHub<span class="u-visually-hidden" data-i18n="ui.novaAba"> (abre em nova aba)</span></a></li>
+        <!-- TODO: LinkedIn real -->
+        <li><a href="#" aria-disabled="true">LinkedIn</a></li>
+        <!-- TODO: e-mail real -->
+        <li><a href="mailto:TODO" aria-disabled="true">E-mail</a></li>
+      </ul>
+      <div class="controles">
+        <div class="tema" role="group" aria-label="Tema" data-i18n-attr="aria-label:tema.rotulo">
+          <button type="button" class="tema__btn" data-tema="auto" aria-pressed="true" data-i18n="tema.auto">Auto</button>
+          <button type="button" class="tema__btn" data-tema="claro" aria-pressed="false" data-i18n="tema.claro">Claro</button>
+          <button type="button" class="tema__btn" data-tema="escuro" aria-pressed="false" data-i18n="tema.escuro">Escuro</button>
+        </div>
+        <div class="idioma" role="group" aria-label="Idioma" data-i18n-attr="aria-label:idioma.rotulo">
+          <a class="idioma__btn" href="?lang=pt" data-idioma="pt" aria-current="true">PT</a>
+          <a class="idioma__btn" href="?lang=en" data-idioma="en" aria-current="false">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="topo" id="topo" hidden aria-label="Voltar ao topo" data-i18n-attr="aria-label:ui.voltarTopo">↑</button>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pedro Henrique",
+    "url": "https://grandoph.github.io/Pagina-Pessoal/",
+    "sameAs": ["https://github.com/GrandoPh"]
+  }
+  </script>
+  <script type="module" src="assets/js/theme.js"></script>
+  <script type="module" src="assets/js/i18n.js"></script>
+  <script type="module" src="assets/js/nav.js"></script>
+  <script type="module" src="assets/js/motion.js"></script>
+  <script type="module" src="assets/js/ui.js"></script>
+  <script type="module" src="assets/js/projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grandoph.github.io/Pagina-Pessoal/sitemap.xml

@@ -1,0 +1,80 @@
+/* ---------- Tokens ---------- */
+:root {
+  /* cor */
+  --cor-fundo: #F4EBD8;
+  --cor-superficie: #FAF5E9;
+  --cor-faixa: #E7DCC4;
+  --cor-texto: #221E1A;
+  --cor-texto-suave: #5A5046;
+  --cor-borda: #221E1A;
+  --cor-sombra: #221E1A;
+  --cor-acento: #C0552F;
+  --cor-acento-forte: #A8431F;
+  --cor-acento-texto: #F4EBD8;
+  --cor-link: #9A3F20;
+  --cor-destaque: #E3A82B;
+  --cor-destaque-texto: #221E1A;
+  --cor-painel: #1F4B43;
+  --cor-painel-texto: #F4EBD8;
+  --cor-oliva: #7A7F52;
+  --cor-oliva-texto: #5F6440;
+  --cor-erro: #8C2F1E;
+
+  /* tipografia */
+  --fonte-display: "Bitter", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --texto-xs: 0.8125rem;
+  --texto-md: 1rem;
+  --texto-lg: 1.125rem;
+  --texto-titulo: clamp(1.5rem, 3vw, 2rem);
+  --texto-display-l: clamp(2.25rem, 5.5vw, 4rem);
+  --texto-display-xl: clamp(3rem, 9vw, 7.5rem);
+
+  /* espaço */
+  --e-1: .25rem; --e-2: .5rem; --e-3: 1rem; --e-4: 1.5rem;
+  --e-5: 2rem; --e-6: 3rem; --e-7: 4rem; --e-8: 6rem; --e-9: 8rem;
+  --secao: clamp(3rem, 8vw, 6rem);
+
+  /* forma */
+  --borda-forte: 3px solid var(--cor-borda);
+  --borda-fina: 1.5px solid var(--cor-borda);
+  --sombra-dura: 8px 8px 0 var(--cor-sombra);
+  --sombra-dura-sm: 4px 4px 0 var(--cor-sombra);
+  --raio-sm: .75rem;
+  --raio-md: 1.5rem;
+  --raio-lg: 2.25rem;
+  --raio-pill: 999px;
+  --raio-organico: 2.5rem 4rem 2.25rem 1.25rem;
+  --raio-blob: 48% 52% 45% 55% / 52% 44% 56% 48%;
+
+  /* movimento */
+  --t-rapida: 150ms;
+  --t-media: 250ms;
+  --t-entrada: 500ms;
+  --curva: cubic-bezier(.2, .8, .2, 1);
+
+  /* layout */
+  --container: 76rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+[data-theme="dark"] {
+  --cor-fundo: #17140F;
+  --cor-superficie: #221E1A;
+  --cor-faixa: #1E1A15;
+  --cor-texto: #F4EBD8;
+  --cor-texto-suave: #C9BFA9;
+  --cor-borda: #F4EBD8;
+  --cor-sombra: #000000;
+  --cor-acento: #E07A52;
+  --cor-acento-forte: #E07A52;
+  --cor-acento-texto: #17140F;
+  --cor-link: #E07A52;
+  --cor-destaque: #F2B93C;
+  --cor-destaque-texto: #17140F;
+  --cor-painel: #2B2620;
+  --cor-painel-texto: #F4EBD8;
+  --cor-oliva: #9AA36B;
+  --cor-oliva-texto: #A8B070;
+  --cor-erro: #F09A84;
+}

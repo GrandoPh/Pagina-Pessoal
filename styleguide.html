@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Styleguide — interno</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bitter:wght@700;900&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body data-pagina="styleguide">
+  <main id="conteudo" class="secao">
+    <div class="u-container">
+      <h1>Styleguide</h1>
+      <p class="u-suave">Página interna de verificação. Não é indexada e não está no menu.</p>
+
+      <div class="pilha" style="margin-top: var(--e-5)">
+        <div class="tema" role="group" aria-label="Tema">
+          <button type="button" class="tema__btn" data-tema="auto" aria-pressed="true">Auto</button>
+          <button type="button" class="tema__btn" data-tema="claro" aria-pressed="false">Claro</button>
+          <button type="button" class="tema__btn" data-tema="escuro" aria-pressed="false">Escuro</button>
+        </div>
+        <div class="idioma" role="group" aria-label="Idioma">
+          <a class="idioma__btn" href="?lang=pt" data-idioma="pt" aria-current="true">PT</a>
+          <a class="idioma__btn" href="?lang=en" data-idioma="en" aria-current="false">EN</a>
+        </div>
+      </div>
+
+      <h2 style="margin-top: var(--e-7)">Cores</h2>
+      <div class="swatches" style="margin-top: var(--e-4)">
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-fundo)"></div>fundo</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-superficie)"></div>superfície</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-faixa)"></div>faixa</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-texto)"></div>texto</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-texto-suave)"></div>texto suave</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-acento)"></div>acento</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-acento-forte)"></div>acento forte</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-link)"></div>link</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-destaque)"></div>destaque</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-painel)"></div>painel</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-oliva)"></div>oliva</div>
+        <div class="swatch"><div class="swatch__cor" style="background: var(--cor-erro)"></div>erro</div>
+      </div>
+
+      <h2 style="margin-top: var(--e-7)">Tipografia</h2>
+      <p class="u-display" style="margin-top: var(--e-3)">Display XL</p>
+      <h2>Display L</h2>
+      <h3>Título</h3>
+      <p class="hero__frase">Corpo grande — 1.125rem.</p>
+      <p>Corpo padrão — 1rem, usado em parágrafos de leitura.</p>
+      <p class="u-micro">Micro · caixa alta</p>
+
+      <h2 style="margin-top: var(--e-7)">Componentes</h2>
+      <div class="pilha" style="margin-top: var(--e-4)">
+        <a class="btn" href="#">Botão primário</a>
+        <a class="btn btn--secundario" href="#">Botão secundário</a>
+        <span class="tag">Tag</span>
+        <span class="tag tag--oliva">Tag oliva</span>
+        <span class="selo">Selo</span>
+      </div>
+
+      <div class="grid grid--projetos" style="margin-top: var(--e-5)">
+        <article class="card">
+          <a class="card__link" href="#">
+            <div class="card__capa" aria-hidden="true"><span class="card__numero">01</span></div>
+            <div class="card__corpo">
+              <h3 class="card__titulo">Projeto de exemplo</h3>
+              <p class="card__resumo">Resumo curto do projeto em uma linha.</p>
+              <div class="card__meta">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="card__seta" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <h2 style="margin-top: var(--e-7)">Controles</h2>
+      <div class="filtros" style="margin-top: var(--e-4)">
+        <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro" data-filtro="web" aria-pressed="false">Web</button>
+        <span class="filtros__contador">3 projeto(s)</span>
+      </div>
+
+      <p style="margin-top: var(--e-6)"><a href="index.html">Voltar para a home</a></p>
+    </div>
+  </main>
+
+  <script type="module" src="assets/js/theme.js"></script>
+</body>
+</html>

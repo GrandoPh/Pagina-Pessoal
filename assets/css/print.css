@@ -1,0 +1,47 @@
+/* ---------- Impressão ---------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .marquee,
+  .topo,
+  .progresso,
+  .menu-btn,
+  .menu-painel,
+  .grao,
+  .skip-link,
+  .tema,
+  .idioma {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444444;
+  }
+
+  .card,
+  .selo,
+  .u-vazio,
+  .btn {
+    box-shadow: none !important;
+    border-color: #000000 !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    transform: none !important;
+  }
+
+  .secao { padding-block: 1.5rem; }
+}
